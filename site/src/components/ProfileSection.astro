@@ -1,0 +1,166 @@
+<section class="profile" id="profile" aria-labelledby="profile-heading">
+	<div class="profile-copy">
+		<p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Academic profile</p>
+		<h1 id="profile-heading">Dr. Robert<br />Treharne</h1>
+		<p class="profile-intro">
+			A concise introduction to Robert's academic work, interests, and professional experience.
+		</p>
+		<a class="text-link" href="#education">Explore academic history <span aria-hidden="true">↘</span></a>
+	</div>
+	<figure class="lunar-figure">
+		<img
+			src="https://images-assets.nasa.gov/image/as11-40-5903/as11-40-5903~orig.jpg"
+			alt="Apollo 11 astronaut Buzz Aldrin standing on the lunar surface beside a deployed experiment"
+			fetchpriority="high"
+		/>
+		<figcaption><span>Field image / 01</span><span>NASA · Apollo 11</span></figcaption>
+	</figure>
+	<div class="profile-index" aria-hidden="true">
+		<span>ACADEMIC RECORD</span>
+		<span>PERSONAL PROFILE</span>
+	</div>
+</section>
+
+<style>
+	.profile {
+		position: relative;
+		display: grid;
+		grid-template-columns: 0.9fr 1.1fr;
+		align-items: center;
+		gap: clamp(32px, 7vw, 92px);
+		min-height: 520px;
+		padding: 64px 0 84px;
+	}
+
+	.profile-copy {
+		position: relative;
+		z-index: 1;
+	}
+
+	.eyebrow,
+	.profile-index,
+	.lunar-figure figcaption {
+		font-size: 10px;
+		text-transform: uppercase;
+	}
+
+	.eyebrow {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		margin: 0 0 22px;
+		color: var(--muted);
+	}
+
+	.status-dot {
+		width: 8px;
+		aspect-ratio: 1;
+		border-radius: 50%;
+		background: var(--signal);
+	}
+
+	h1 {
+		margin: 0;
+		font-family: var(--serif);
+		font-size: clamp(56px, 7.3vw, 104px);
+		font-weight: 400;
+		line-height: 0.91;
+	}
+
+	.profile-intro {
+		max-width: 410px;
+		margin: 28px 0 22px;
+		color: var(--muted);
+		font-size: 13px;
+	}
+
+	.text-link {
+		display: inline-flex;
+		align-items: center;
+		gap: 12px;
+		padding-bottom: 4px;
+		border-bottom: 1px solid var(--signal);
+		font-size: 11px;
+		text-decoration: none;
+	}
+
+	.text-link span {
+		font-size: 16px;
+	}
+
+	.lunar-figure {
+		position: relative;
+		margin: 0;
+		padding: 12px;
+		border: 1px solid var(--rule);
+		background: var(--paper-raised);
+	}
+
+	.lunar-figure::before {
+		position: absolute;
+		top: -10px;
+		left: 22px;
+		width: 48px;
+		height: 18px;
+		border: 1px solid var(--rule);
+		border-bottom: 0;
+		background: var(--paper);
+		content: '';
+	}
+
+	.lunar-figure img {
+		display: block;
+		width: 100%;
+		aspect-ratio: 1.32;
+		object-fit: cover;
+		object-position: 50% 45%;
+		filter: saturate(0.72) contrast(1.04);
+	}
+
+	:global([data-contrast='high']) .lunar-figure img {
+		filter: grayscale(1) contrast(1.2);
+	}
+
+	.lunar-figure figcaption {
+		display: flex;
+		justify-content: space-between;
+		gap: 12px;
+		padding: 11px 2px 1px;
+		color: var(--muted);
+		font-size: 9px;
+	}
+
+	.profile-index {
+		position: absolute;
+		right: 0;
+		bottom: 24px;
+		left: 0;
+		display: flex;
+		justify-content: space-between;
+		padding-top: 12px;
+		border-top: 1px solid var(--rule);
+		color: var(--muted);
+		font-size: 9px;
+	}
+
+	@media (max-width: 740px) {
+		.profile {
+			grid-template-columns: 1fr;
+			gap: 36px;
+			min-height: 0;
+			padding: 56px 0 82px;
+		}
+
+		h1 {
+			font-size: clamp(58px, 14vw, 88px);
+		}
+
+		.lunar-figure img {
+			aspect-ratio: 1.2;
+		}
+
+		.profile-index {
+			bottom: 20px;
+		}
+	}
+</style>

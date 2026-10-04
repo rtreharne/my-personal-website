@@ -1,0 +1,56 @@
+<button class="contrast-toggle" type="button" aria-pressed="false" data-contrast-toggle>
+	<span class="toggle-indicator" aria-hidden="true"></span>
+	<span data-toggle-label>High contrast</span>
+</button>
+
+<script is:inline>
+	const toggle = document.querySelector('[data-contrast-toggle]');
+
+	if (toggle) {
+		const label = toggle.querySelector('[data-toggle-label]');
+		const setContrast = (enabled) => {
+			document.documentElement.dataset.contrast = enabled ? 'high' : 'standard';
+			toggle.setAttribute('aria-pressed', String(enabled));
+			label.textContent = enabled ? 'Standard contrast' : 'High contrast';
+		};
+
+		setContrast(document.documentElement.dataset.contrast === 'high');
+		toggle.addEventListener('click', () => {
+			const enabled = toggle.getAttribute('aria-pressed') !== 'true';
+			setContrast(enabled);
+			try {
+				localStorage.setItem('contrast-mode', enabled ? 'high' : 'standard');
+			} catch {}
+		});
+	}
+</script>
+
+<style>
+	.contrast-toggle {
+		display: inline-flex;
+		align-items: center;
+		gap: 9px;
+		min-height: 42px;
+		padding: 8px 12px;
+		border: 1px solid var(--rule);
+		border-radius: 2px;
+		background: var(--paper-raised);
+		color: var(--ink);
+		font: inherit;
+		font-size: 11px;
+		cursor: pointer;
+	}
+
+	.toggle-indicator {
+		width: 13px;
+		aspect-ratio: 1;
+		border: 2px solid currentColor;
+		border-radius: 50%;
+		background: transparent;
+	}
+
+	.contrast-toggle[aria-pressed='true'] .toggle-indicator {
+		background: currentColor;
+		box-shadow: inset 0 0 0 2px var(--paper-raised);
+	}
+</style>

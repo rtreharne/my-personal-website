@@ -1,0 +1,81 @@
+<section class="record-section teaching-section" id="teaching" aria-labelledby="teaching-heading">
+	<div class="section-label">
+		<span>02 / Practice</span>
+		<span>Teaching</span>
+	</div>
+	<div class="section-content">
+		<h2 id="teaching-heading">Teaching</h2>
+		<p class="section-intro">Courses, subjects, and teaching information.</p>
+		<div class="teaching-note">
+			<p>Add course titles, subjects, and a brief description of teaching experience here.</p>
+			<span aria-hidden="true">[ T—02 ]</span>
+		</div>
+	</div>
+</section>
+
+<style>
+	.record-section {
+		display: grid;
+		grid-template-columns: 1fr 2fr;
+		gap: clamp(28px, 7vw, 92px);
+		padding: 48px 0 62px;
+		border-top: 1px solid var(--rule);
+	}
+
+	.section-label {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+		padding-top: 9px;
+		color: var(--muted);
+		font-size: 10px;
+		text-transform: uppercase;
+	}
+
+	.section-label span:first-child {
+		color: var(--signal-ink);
+	}
+
+	h2 {
+		margin: 0;
+		font-family: var(--serif);
+		font-size: clamp(34px, 4.6vw, 54px);
+		font-weight: 400;
+		line-height: 1.1;
+	}
+
+	.section-intro {
+		margin: 9px 0 28px;
+		color: var(--muted);
+		font-size: 12px;
+	}
+
+	.teaching-note {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		gap: 24px;
+		padding: 19px 0;
+		border-top: 1px solid var(--rule);
+		color: var(--muted);
+		font-size: 12px;
+	}
+
+	.teaching-note p {
+		max-width: 480px;
+		margin: 0;
+	}
+
+	.teaching-note span {
+		color: var(--signal-ink);
+		font-size: 10px;
+	}
+
+	@media (max-width: 740px) {
+		.record-section {
+			grid-template-columns: 1fr;
+			gap: 24px;
+			padding: 34px 0 42px;
+		}
+	}
+</style>

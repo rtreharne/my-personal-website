@@ -1,0 +1,87 @@
+<section class="record-section" id="education" aria-labelledby="education-heading">
+	<div class="section-label">
+		<span>01 / Record</span>
+		<span>Academic history</span>
+	</div>
+	<div class="section-content">
+		<h2 id="education-heading">Academic history</h2>
+		<p class="section-intro">Education, appointments, and milestones.</p>
+		<div class="record-prompt">
+			<span class="record-mark" aria-hidden="true">+</span>
+			<p>Add qualifications, institutions, and dates to complete this section.</p>
+		</div>
+	</div>
+</section>
+
+<style>
+	.record-section {
+		display: grid;
+		grid-template-columns: 1fr 2fr;
+		gap: clamp(28px, 7vw, 92px);
+		padding: 48px 0 62px;
+		border-top: 1px solid var(--rule);
+	}
+
+	.section-label {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+		padding-top: 9px;
+		color: var(--muted);
+		font-size: 10px;
+		text-transform: uppercase;
+	}
+
+	.section-label span:first-child {
+		color: var(--signal-ink);
+	}
+
+	h2 {
+		margin: 0;
+		font-family: var(--serif);
+		font-size: clamp(34px, 4.6vw, 54px);
+		font-weight: 400;
+		line-height: 1.1;
+	}
+
+	.section-intro {
+		margin: 9px 0 28px;
+		color: var(--muted);
+		font-size: 12px;
+	}
+
+	.record-prompt {
+		display: flex;
+		align-items: center;
+		gap: 16px;
+		min-height: 74px;
+		padding: 16px 0;
+		border-top: 1px solid var(--rule);
+		border-bottom: 1px solid var(--rule);
+		color: var(--muted);
+		font-size: 12px;
+	}
+
+	.record-prompt p {
+		margin: 0;
+	}
+
+	.record-mark {
+		display: grid;
+		width: 32px;
+		aspect-ratio: 1;
+		flex: 0 0 auto;
+		place-items: center;
+		border: 1px solid var(--rule);
+		color: var(--signal-ink);
+		font-size: 17px;
+	}
+
+	@media (max-width: 740px) {
+		.record-section {
+			grid-template-columns: 1fr;
+			gap: 24px;
+			padding: 34px 0 42px;
+		}
+	}
+</style>

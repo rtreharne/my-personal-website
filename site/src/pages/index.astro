@@ -1,0 +1,51 @@
+---
+import AcademicHistory from '../components/AcademicHistory.astro';
+import ProfileSection from '../components/ProfileSection.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import Teaching from '../components/Teaching.astro';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+	<div class="page-shell" id="top">
+		<SiteHeader />
+		<main id="main-content">
+			<ProfileSection />
+			<AcademicHistory />
+			<Teaching />
+		</main>
+		<footer class="site-footer">
+			<span>Dr. Robert Treharne</span>
+			<span>Academic profile <span aria-hidden="true">·</span> Updated 2026</span>
+		</footer>
+	</div>
+</Layout>
+
+<style>
+	.page-shell {
+		width: min(1120px, calc(100% - 64px));
+		margin: 0 auto;
+	}
+
+	.site-footer {
+		display: flex;
+		justify-content: space-between;
+		gap: 20px;
+		padding: 20px 0 34px;
+		border-top: 1px solid var(--rule);
+		color: var(--muted);
+		font-size: 9px;
+		text-transform: uppercase;
+	}
+
+	@media (max-width: 600px) {
+		.page-shell {
+			width: calc(100% - 36px);
+		}
+
+		.site-footer {
+			flex-direction: column;
+			gap: 4px;
+		}
+	}
+</style>

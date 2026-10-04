@@ -1,0 +1,93 @@
+---
+import ContrastToggle from './ContrastToggle.astro';
+---
+
+<header class="site-header">
+	<a class="wordmark" href="#top" aria-label="Dr. Robert Treharne, home">
+		<span class="wordmark-symbol" aria-hidden="true">RT</span>
+		<span>Robert Treharne</span>
+	</a>
+	<nav aria-label="Main navigation">
+		<a href="#profile">Profile</a>
+		<a href="#education">Academic history</a>
+		<a href="#teaching">Teaching</a>
+	</nav>
+	<ContrastToggle />
+</header>
+
+<style>
+	.site-header {
+		display: grid;
+		grid-template-columns: 1fr auto 1fr;
+		align-items: center;
+		gap: 24px;
+		min-height: 76px;
+		border-bottom: 1px solid var(--rule);
+	}
+
+	.wordmark {
+		display: inline-flex;
+		align-items: center;
+		gap: 10px;
+		width: fit-content;
+		color: var(--ink);
+		font-family: var(--serif);
+		font-size: 17px;
+		text-decoration: none;
+	}
+
+	.wordmark-symbol {
+		display: grid;
+		width: 34px;
+		aspect-ratio: 1;
+		place-items: center;
+		border: 1px solid var(--signal);
+		border-radius: 50%;
+		color: var(--signal-ink);
+		font-family: var(--mono);
+		font-size: 10px;
+	}
+
+	nav {
+		display: flex;
+		justify-content: center;
+		gap: clamp(14px, 3vw, 38px);
+	}
+
+	nav a {
+		color: var(--muted);
+		font-size: 11px;
+		text-decoration: none;
+	}
+
+	nav a:hover {
+		color: var(--signal-ink);
+		text-decoration: underline;
+		text-underline-offset: 5px;
+	}
+
+	.contrast-toggle {
+		justify-self: end;
+	}
+
+	@media (max-width: 740px) {
+		.site-header {
+			grid-template-columns: 1fr auto;
+			gap: 12px;
+			padding: 14px 0;
+		}
+
+		nav {
+			grid-row: 2;
+			grid-column: 1 / -1;
+			justify-content: flex-start;
+			flex-wrap: wrap;
+			gap: 10px 20px;
+		}
+
+		.contrast-toggle {
+			grid-row: 1;
+			grid-column: 2;
+		}
+	}
+</style>
